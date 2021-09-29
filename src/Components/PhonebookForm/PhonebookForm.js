@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import style from "./PhonebookForm.module.css";
-// import PropTypes from "prop-types";
-// import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 
 class PhonebookForm extends Component {
-  //   static propTypes = {
-  //     onSubmit: PropTypes.func.isRequired
-  //   };
-
   state = {
+    id: "",
     name: "",
     number: ""
   };
@@ -20,7 +16,7 @@ class PhonebookForm extends Component {
 
   resetForm = () => {
     this.setState({
-      //   id: "",
+      id: "",
       name: "",
       number: ""
     });
@@ -75,5 +71,15 @@ class PhonebookForm extends Component {
     );
   }
 }
+
+PhonebookForm.defaultPops = {
+  id: "",
+  name: "",
+  number: ""
+};
+
+PhonebookForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default PhonebookForm;
